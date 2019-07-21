@@ -11,8 +11,10 @@ const router = express.Router();
 router.get('/', function(req, res) {
 
     // your application requests authorization
-    var scope = 'user-read-private user-read-email user-read-recently-played user-library-read playlist-read-private user-top-read';
-    res.redirect(
+  var scope = 'user-read-private user-read-email user-read-recently-played user-library-read playlist-read-private user-top-read';
+  console.log('api calling inside get')
+  res.redirect(
+      
       'https://accounts.spotify.com/authorize?' +
         querystring.stringify({
           response_type: 'code',
