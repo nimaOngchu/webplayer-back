@@ -1,6 +1,6 @@
 const express = require('express');
 const serverless = require('serverless-http');
-const querystring = require('querystring');
+// const querystring = require('querystring');
 // const request = require('request');
 
 const { API_CLIENT_ID, API_CLIENT_SECRET } = process.env
@@ -14,14 +14,14 @@ router.get('/', function(req, res) {
   var scope = 'user-read-private user-read-email user-read-recently-played user-library-read playlist-read-private user-top-read';
   console.log('api calling inside get')
   res.redirect(
-
-      'https://accounts.spotify.com/authorize?' +
-        querystring.stringify({
-          response_type: 'code',
-          client_id: API_CLIENT_ID,
-          scope: scope,
-          redirect_uri: redirect_uri
-        })
+` https://accounts.spotify.com/authorize? response_type=code &client_id =${API_CLIENT_ID}`
+      // 'https://accounts.spotify.com/authorize?' +
+      //   querystring.stringify({
+      //     response_type: 'code',
+      //     client_id: API_CLIENT_ID,
+      //     scope: scope,
+      //     redirect_uri: redirect_uri
+      //   })
     );
 });
 
