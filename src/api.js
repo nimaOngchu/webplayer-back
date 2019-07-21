@@ -4,7 +4,7 @@ const querystring = require('querystring');
 const request = require('request');
 
 const { API_CLIENT_ID, API_CLIENT_SECRET } = process.env
-var redirect_uri = 'http://localhost:8888/callback'; 
+var redirect_uri = 'https://webplayer.netlify.com/.netlify/functions/api/callback';
 
 const app = express();
 const router = express.Router();
